@@ -1,0 +1,14 @@
+<h1 class="heading">We are the CSS to your HTML</h1><br/>
+<img id="front-image" src="/img/home.jpg"/><br/><br/>
+<div class="Jit">
+	<h1 class="info">Jit: </h1>
+	<img class="Jit-avatar" width="128px" src="<%= @view_user.gravatar_url %>" />
+		<br/>
+	<h2 class="info">Username: <%= @view_user.username %>
+		<br/><br/>E-mail: <%= @view_user.email %>
+	</h2>
+</div>
+<div class="Jit">
+	Posts
+	<a href="/roast/<%= @view_post.id %>"><h2 class="post-info"><%= @view_post.title %></h2></a>
+</div>

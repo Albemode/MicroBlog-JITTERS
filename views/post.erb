@@ -1,0 +1,9 @@
+<h1 class="heading">Roast Time</h1><br/>
+<img id="front-image" src="/img/coffee.jpg"/><br/>
+<h1 class="heading">Roast Feed</h1>
+<ol class="text-center">
+	<% @posts.each do |post| %>
+		<a href="/roast/<%= post.id %>"><li><%= post.title %><br><a class="roast" href="/user/<%= post.user.id if post.user %>"><%= post.user.username if post.user %></a></li></a>
+	<% end %>
+</ol><br/>
+<a href="/newroast"><input class="btn btn-warning" type="submit" value="Make a new roast" /></a><br/><br/>

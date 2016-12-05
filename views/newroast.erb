@@ -1,0 +1,11 @@
+<h1 class="heading">Roast Time</h1><br/>
+<img id="front-image" src="/img/coffee.jpg"/><br/><br/>
+<div class="col-md-12 text-center">
+  <form method="POST" action="/newroast">
+    <span <%= 'class="error" ' if @error %> id="console"><%= @msg %></span>
+		<label>Title: <input type="text" name="title" /></label><br><br/>
+  	<textarea maxlength="1337" cols="50" rows="10" name="message"></textarea><br>
+  	<strong><span id="message-remaining"></span></strong><br>
+  	<input class="btn btn-default" type="submit" />
+  </form>
+</div>

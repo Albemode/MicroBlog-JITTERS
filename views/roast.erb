@@ -1,0 +1,28 @@
+<h1 class="heading"><%= @post.title if @post.title %></h1><br/>
+<div class="row">
+	<div class="text-center post">
+		<a href="/user/<%= @post.user.id %>"><img class="gravatar" width="32px" src="<%= @post.user.gravatar_url %>" /> <%= @post.user.username %></a>
+	</div>
+	<div class="text-center post-content">
+		<%= @post.content %>
+	</div>
+</div>
+<div class="row">
+		<% @post.comments.each do |comment| %>
+	<div class="text-center user">
+		<a href="/user/<%= comment.user.id %>"><img class="gravatar" width="32px" src="<%= comment.user.gravatar_url %>" /> <%= comment.user.username %></a>
+	</div>
+	<div class="text-center user-content">
+		<%= comment.content %>
+	</div>
+	<% end %>
+	<div class="col-md-12 text-center">
+	  <form method="POST" action="/roast">
+	    <span <%= 'class="error" ' if @error %> id="console"><%= @msg %></span>
+	    <input type="hidden" name="post_id" value="<%= @post.id %>" /><br/>
+	  	<textarea maxlength="255" cols="60" rows="5" name="message" placeholder="Add to the Feed"></textarea><br/>
+	  	<strong><span id="message-remaining"></span></strong><br/>
+	  	<input class="btn btn-default" type="submit" />
+	  </form>
+	</div>
+</div>
